@@ -26,7 +26,45 @@ public class UserNode {
         this.ticketid=ticketid;
         next=null;
     } 
-    
-    
-    
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setIcnum(int icnum) {
+        this.icnum = icnum;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public void setTicketid(int ticketid) {
+        this.ticketid = ticketid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getIcnum() {
+        return icnum;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public int getTicketid() {
+        return ticketid;
+    }
+
 }
