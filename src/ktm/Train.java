@@ -13,7 +13,11 @@ public class Train {
     
     
     //Train methods
-    public void selectDate(){
-    
+    public static void setTrainDate(int date){
+    train[date]=date;
     } 
+    
+    public static int getTrainDate(int date){
+        return train[date];
+    }
 }

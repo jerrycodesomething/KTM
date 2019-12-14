@@ -4,6 +4,7 @@ package ktm;
 public class UserNode {
     
     String name;
+    String password;
     int icnum;
     int phone;
     int ticketid;
@@ -11,6 +12,7 @@ public class UserNode {
     
     public UserNode(){
         name=null;
+        password=null;
         icnum=0;
         phone=0;
         ticketid=0;
@@ -24,5 +26,7 @@ public class UserNode {
         this.ticketid=ticketid;
         next=null;
     } 
+    
+    
     
 }
