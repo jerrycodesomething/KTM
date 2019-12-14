@@ -11,7 +11,11 @@ public class User {
     //User Constructor
 
     //User Methods
-    public void addFirst(String name, String ic, String phone, int ticketid){
+    public void initializeSeats(){
+        
+    }
+    
+    public void addFirst(String name, String ic, String phone, String ticketid){
         UserNode newnode= new UserNode(name, ic, phone, ticketid);
         newnode.next=head;
         head=newnode;

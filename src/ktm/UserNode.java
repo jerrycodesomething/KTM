@@ -1,34 +1,30 @@
 
 package ktm;
 
+
 public class UserNode {
-    
     String name;
-    String password;
-    String icnum;
+    String ic;
     String phone;
+    String ticketid;
     boolean status;
-    int ticketid;
     UserNode next;
     
     public UserNode(){
-        name=null;
-        password=null;
-        icnum=null;
-        phone=null;
-        ticketid=0;
-        status=false;
-        next=null;
+        this.name=null;
+        this.ic=null;
+        this.phone=null;
+        this.ticketid=null;
+        this.status=false;
+        this.next=null;
     }
     
-    public UserNode (String name, String icnumber, String phone, int ticketid){
-        this.name=name;
-        this.icnum=icnumber;
-        this.phone=phone;
-        this.ticketid=ticketid;
-        this.status=true;
-        next=null;
-    } 
-
-
+    public UserNode(String name, String ic, String phone, String ticketid){
+        this.name=null;
+        this.ic=null;
+        this.phone=null;
+        this.ticketid=null;
+        this.status=false;
+        this.next=null;
+    }
 }
