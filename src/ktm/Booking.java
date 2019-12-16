@@ -1,10 +1,7 @@
 
 package ktm;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,8 +9,6 @@ import java.util.Scanner;
 public class Booking {
     //Booking Class Variables
     static String ui_state; 
-    
-//Booking Constructor
     
     //Booking Methods
     public static void bookMain(){
@@ -36,17 +31,17 @@ public class Booking {
                 
             case "1":
                 System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
-                System.out.println("------ January 1 (dep 12:00 arr 20:00)-----------");
-                Train1 user= new Train1();
+                System.out.println("------ 1 January 2020 (dep 12:00 arr 20:00)-------");
+                Train train= new Train();
                 String confirmation="x";
-                user.initializeSeats_Jan1();
-                if(user.checkAvailability()>0){
-                    System.out.println("\nAvailable Seats: "+user.checkAvailability()+"\n");
+                train.initializeSeats_Jan1();
+                if(train.checkAvailability()>0){
+                    System.out.println("\nAvailable Seats: "+train.checkAvailability()+"\n");
                     String name;
                     String ic;
                     String phone;
-                    String ticketid=ticketidGenerator()+""+user.returnSeat();
-                    int seat=user.returnSeat();
+                    String ticketid=ticketidGenerator()+""+train.returnSeat();
+                    int seat=train.returnSeat();
                     boolean status=true;
                     System.out.println("Enter Full Name:");
                     name=s.nextLine();
@@ -55,20 +50,20 @@ public class Booking {
                     System.out.println("Enter Phone Number");  
                     phone=s.nextLine();
                     
-                    while(!confirmation.equals("y") || !confirmation.equals("n")){
+                    while(!confirmation.equalsIgnoreCase("y") || !confirmation.equalsIgnoreCase("n")){
                         System.out.println("Confirm Booking? Y/N");
                         confirmation=s.nextLine();
                         
                         if(confirmation.equalsIgnoreCase("y")){
                             try{
-                                user.bookSeat(name, ic, phone, ticketid, seat, status);
-                                user.updateTrain1File();
+                                train.bookSeat(name, ic, phone, ticketid, seat, status);
+                                train.updateTrain1File();
                             }
                             catch(IOException e){
                                 System.out.println("Error 404! File Not Found!");
                             }
 
-                            System.out.println("Booking Successful!");
+                            System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
                             System.out.println("Travel Date              Wednesday 1 January 2019");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
@@ -77,7 +72,8 @@ public class Booking {
                             System.out.println("Passenger IC Number: "+ic);
                             System.out.println("Seat:                                         "+seat);
                             System.out.println("Ticket ID: "+ticketid);
-                            System.out.println("--------------------------------------------------"); 
+                            System.out.println("--------------------------------------------------\n\n"); 
+                            KTM.startMenu();
                             break;
                         }
                         else if(confirmation.equalsIgnoreCase("n")){
@@ -90,9 +86,9 @@ public class Booking {
                         }
                     }
                 }
-                else{
+                else{ 
                     System.out.println("Sorry, this train is FULLY BOOKED...  ");
-                    System.out.println("Would you like to be added to the waiting list?");
+                    System.out.println("Would you like to be added to the waiting list? Y/N");
                 }
                 break;
                 
@@ -120,10 +116,9 @@ public class Booking {
         }
     }
     
-    
     public static String ticketidGenerator(){
         Random r=new Random();
-        int randomid=r.nextInt(1000);
+        int randomid=r.nextInt(1000000000);
         return String.valueOf(randomid);      
     }
     
