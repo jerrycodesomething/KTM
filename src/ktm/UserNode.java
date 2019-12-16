@@ -7,6 +7,7 @@ public class UserNode {
     String ic;
     String phone;
     String ticketid;
+    int seat;
     boolean status;
     UserNode next;
     
@@ -15,15 +16,17 @@ public class UserNode {
         this.ic=null;
         this.phone=null;
         this.ticketid=null;
+        this.seat=0;
         this.status=false;
         this.next=null;
     }
     
-    public UserNode(String name, String ic, String phone, String ticketid, boolean status){
+    public UserNode(String name, String ic, String phone, String ticketid, int seat, boolean status){
         this.name=name;
         this.ic=ic;
         this.phone=phone;
         this.ticketid=ticketid;
+        this.seat=seat;
         this.status=status;
         this.next=null;
     }

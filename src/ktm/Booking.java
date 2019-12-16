@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class Booking {
     //Booking Class Variables
     static String ui_state; 
-    static int idcounter=0;
     
 //Booking Constructor
     
@@ -34,54 +33,69 @@ public class Booking {
                 KTM.startMenu();
                 KTM.clearConsole();
                 break;
+                
             case "1":
                 System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
                 System.out.println("------ January 1 (dep 12:00 arr 20:00)-----------");
                 Train1 user= new Train1();
-                String confirmation="n";
+                String confirmation="x";
                 user.initializeSeats_Jan1();
-                String name;
-                String ic;
-                String phone;
-                String ticketid=ticketidGenerator();
-                boolean status=true;
-                
-                System.out.println("Enter Full Name:");
-                name=s.nextLine();
-                System.out.println("Enter IC Number:");
-                ic=s.nextLine();
-                System.out.println("Enter Phone Number");  
-                phone=s.nextLine();
-                System.out.println("Confirm Booking? Y/N");
-                confirmation=s.nextLine();
-                
-                if(confirmation.equalsIgnoreCase("y")){
-//                    try{
-//                        user.bookSeat(name, ic, phone, ticketid, status);
-//                        user.updateTrainFile();
-//                    }
-//                    catch(IOException e){
-//                        System.out.println("Error 404! File Not Found!");
-//                    }
+                if(user.checkAvailability()>0){
+                    System.out.println("\nAvailable Seats: "+user.checkAvailability()+"\n");
+                    String name;
+                    String ic;
+                    String phone;
+                    String ticketid=ticketidGenerator()+""+user.returnSeat();
+                    int seat=user.returnSeat();
+                    boolean status=true;
+                    System.out.println("Enter Full Name:");
+                    name=s.nextLine();
+                    System.out.println("Enter IC Number:");
+                    ic=s.nextLine();
+                    System.out.println("Enter Phone Number");  
+                    phone=s.nextLine();
                     
-                    System.out.println("Booking Successful!");
-                    System.out.println("-------------  Ticket Details -------------------");
-                    System.out.println("Departing from                Kuala Lumpur(12:00)");
-                    System.out.println("Arriving at                   Johor Bahru (20:00)");
-                    System.out.println("Passenger Name: "+name);
-                    System.out.println("Passenger IC Number: "+ic);
-                    System.out.println("Ticket ID: "+ticketid);
-                }
-                else if(confirmation.equalsIgnoreCase("n")){
-                    System.out.println("Booking Cancelled... Please select a travel date!");
-                    bookMain();
+                    while(!confirmation.equals("y") || !confirmation.equals("n")){
+                        System.out.println("Confirm Booking? Y/N");
+                        confirmation=s.nextLine();
+                        
+                        if(confirmation.equalsIgnoreCase("y")){
+                            try{
+                                user.bookSeat(name, ic, phone, ticketid, seat, status);
+                                user.updateTrain1File();
+                            }
+                            catch(IOException e){
+                                System.out.println("Error 404! File Not Found!");
+                            }
+
+                            System.out.println("Booking Successful!");
+                            System.out.println("-------------  Ticket Details -------------------");
+                            System.out.println("Travel Date              Wednesday 1 January 2019");
+                            System.out.println("Departing from                Kuala Lumpur(12:00)");
+                            System.out.println("Arriving at                   Johor Bahru (20:00)");
+                            System.out.println("\nPassenger Name: "+name);
+                            System.out.println("Passenger IC Number: "+ic);
+                            System.out.println("Seat:                                         "+seat);
+                            System.out.println("Ticket ID: "+ticketid);
+                            System.out.println("--------------------------------------------------"); 
+                            break;
+                        }
+                        else if(confirmation.equalsIgnoreCase("n")){
+                            System.out.println("Booking Cancelled... Please select a travel date!");
+                            bookMain();
+                            break;
+                        }
+                        else{
+                            System.out.println("Please sellect Y or N only!");
+                        }
+                    }
                 }
                 else{
-                    System.out.println("Please sellect Y or N only!");
+                    System.out.println("Sorry, this train is FULLY BOOKED...  ");
+                    System.out.println("Would you like to be added to the waiting list?");
                 }
-                
-                user.showList();
                 break;
+                
             case "2":
                 System.out.println("2");
                 break;
@@ -110,8 +124,7 @@ public class Booking {
     public static String ticketidGenerator(){
         Random r=new Random();
         int randomid=r.nextInt(1000);
-        idcounter++;
-        return String.valueOf(randomid)+String.valueOf(idcounter);        
+        return String.valueOf(randomid);      
     }
     
     
