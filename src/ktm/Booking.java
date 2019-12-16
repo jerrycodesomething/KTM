@@ -73,7 +73,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date              Wednesday 1 January 2019");
+                            System.out.println("Travel Date              Wednesday 1 January 2020");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -165,7 +165,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Thursday 2 January 2019");
+                            System.out.println("Travel Date               Thursday 2 January 2020");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -192,6 +192,8 @@ public class Booking {
                     waitlistconfirm=s.nextLine();
                     
                     if(waitlistconfirm.equalsIgnoreCase("y")){
+                        String ticketid=ticketidGenerator()+""+train.returnSeat();
+                        int seat=train.returnSeat();
                         System.out.println("Enter Full Name:");
                         String name=s.nextLine();
                         System.out.println("Enter IC Number:");
@@ -215,7 +217,7 @@ public class Booking {
                 
             case "3":
                 System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
-                System.out.println("------ 2 January 2020 (dep 12:00 arr 20:00)-------");
+                System.out.println("------ 3 January 2020 (dep 12:00 arr 20:00)-------");
                 train= new Train();
                 confirmation="x";
                 waitlistconfirm="x";
@@ -257,7 +259,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Friday 3 January 2019");
+                            System.out.println("Travel Date               Friday 3 January 2020");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -307,7 +309,7 @@ public class Booking {
                 
             case "4":
                 System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
-                System.out.println("------ 2 January 2020 (dep 12:00 arr 20:00)-------");
+                System.out.println("------ 5 January 2020 (dep 12:00 arr 20:00)-------");
                 train= new Train();
                 confirmation="x";
                 waitlistconfirm="x";
@@ -349,7 +351,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Saturday 4 January 2019");
+                            System.out.println("Travel Date               Saturday 4 January 2020");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -398,7 +400,7 @@ public class Booking {
                 break;
             case "5":
                 System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
-                System.out.println("------ 2 January 2020 (dep 12:00 arr 20:00)-------");
+                System.out.println("------ 5 January 2020 (dep 12:00 arr 20:00)-------");
                 train= new Train();
                 confirmation="x";
                 waitlistconfirm="x";
@@ -440,7 +442,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Sunday 5 January 2019");
+                            System.out.println("Travel Date               Sunday 5 January 2020");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -489,7 +491,7 @@ public class Booking {
                 break;
             case "6":
                 System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
-                System.out.println("------ 2 January 2020 (dep 12:00 arr 20:00)-------");
+                System.out.println("------ 6 January 2020 (dep 12:00 arr 20:00)-------");
                 train= new Train();
                 confirmation="x";
                 waitlistconfirm="x";
@@ -531,7 +533,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Monday 6 January 2019");
+                            System.out.println("Travel Date               Monday 6 January 2020");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -580,7 +582,7 @@ public class Booking {
                 break;
             case "7":
                 System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
-                System.out.println("------ 2 January 2020 (dep 12:00 arr 20:00)-------");
+                System.out.println("------ 7 January 2020 (dep 12:00 arr 20:00)-------");
                 train= new Train();
                 confirmation="x";
                 waitlistconfirm="x";
@@ -622,7 +624,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Tuesday 6 January 2019");
+                            System.out.println("Travel Date               Tuesday 6 January 2020");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);

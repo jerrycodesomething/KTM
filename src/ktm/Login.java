@@ -63,7 +63,7 @@ public class Login {
         train.initializeSeats_Jan1();
         if((train.checkBooking(ic, ticketid))==true){
             System.out.println("-------------  Ticket Details -------------------");
-            System.out.println("Travel Date              Wednesday 1 January 2019");
+            System.out.println("Travel Date              Wednesday 1 January 2020");
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
@@ -72,56 +72,56 @@ public class Login {
         train.initializeSeats_Jan2();
         if((train.checkBooking(ic, ticketid))==true){
             System.out.println("-------------  Ticket Details -------------------");
-            System.out.println("Travel Date              Thursday 2 January 2019");
+            System.out.println("Travel Date              Thursday 2 January 2020");
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
-            System.out.println("--------------------------------------------------\n\n"); 
+            System.out.println("--------------------------------------------------\n"); 
         } 
         train.initializeSeats_Jan3();
         if((train.checkBooking(ic, ticketid))==true){
             System.out.println("-------------  Ticket Details -------------------");
-            System.out.println("Travel Date              Friday 3 January 2019");
+            System.out.println("Travel Date              Friday 3 January 2020");
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
-            System.out.println("--------------------------------------------------\n\n"); 
+            System.out.println("--------------------------------------------------\n"); 
         } 
         train.initializeSeats_Jan4();
         if((train.checkBooking(ic, ticketid))==true){
             System.out.println("-------------  Ticket Details -------------------");
-            System.out.println("Travel Date              Saturday 4 January 2019");
+            System.out.println("Travel Date              Saturday 4 January 2020");
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
-            System.out.println("--------------------------------------------------\n\n"); 
+            System.out.println("--------------------------------------------------\n"); 
         } 
         train.initializeSeats_Jan5();
         if((train.checkBooking(ic, ticketid))==true){
             System.out.println("-------------  Ticket Details -------------------");
-            System.out.println("Travel Date              Sunday 5 January 2019");
+            System.out.println("Travel Date              Sunday 5 January 2020");
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
-            System.out.println("--------------------------------------------------\n\n"); 
+            System.out.println("--------------------------------------------------\n"); 
         } 
         train.initializeSeats_Jan6();
         if((train.checkBooking(ic, ticketid))==true){
             System.out.println("-------------  Ticket Details -------------------");
-            System.out.println("Travel Date              Monday 6 January 2019");
+            System.out.println("Travel Date              Monday 6 January 2020");
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
-            System.out.println("--------------------------------------------------\n\n"); 
+            System.out.println("--------------------------------------------------\n"); 
         } 
         train.initializeSeats_Jan7();
         if((train.checkBooking(ic, ticketid))==true){
             System.out.println("-------------  Ticket Details -------------------");
-            System.out.println("Travel Date              Tuesday 7 January 2019");
+            System.out.println("Travel Date              Tuesday 7 January 2020");
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
-            System.out.println("--------------------------------------------------\n\n"); 
+            System.out.println("--------------------------------------------------\n"); 
         }    
     }
     

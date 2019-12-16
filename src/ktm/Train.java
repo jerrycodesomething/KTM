@@ -950,7 +950,19 @@ public class Train {
                 System.out.println("\nPassenger Name: "+current.name);
                 System.out.println("Passenger IC Number: "+current.ic);
                 System.out.println("Seat:                                         "+current.seat);
+                System.out.println("Ticket ID: "+current.ticketid);   
+                System.out.println("Booking Confirmed!");
+            }
+            current=current.next;
+        }
+    }
+    
+    public void retrieveStatus(String ic){
+        UserNode current= head;
+        while(current!=null){
+            if((current.ic).equals(ic)){
                 System.out.println("Ticket ID: "+current.ticketid);    
+                System.out.println("Booking Confirmed!");
             }
             current=current.next;
         }
@@ -961,6 +973,19 @@ public class Train {
         boolean check=false;
         while(current!=null){
             if((current.ic).equals(ic) && (current.ticketid).equals(ticketid)){
+                check=true;
+                break;
+            }
+            current=current.next;
+        }
+        return check;
+    }
+    
+    public boolean checkTicket(String ic){
+        UserNode current= head;
+        boolean check=false;
+        while(current!=null){
+            if((current.ic).equals(ic)){
                 check=true;
                 break;
             }
@@ -1121,6 +1146,252 @@ public class Train {
         File file=new File("Waiting_list7.txt");
         if(file.length()==0){
             check=true;
+        }
+        return check;
+    }
+    
+    public boolean checkWaitName1(String ic){
+        boolean check=false;
+        head2=null;
+        tail2=null;
+        try{
+            Scanner s= new Scanner(new FileInputStream("Waiting_List1.txt"));
+            while(s.hasNextLine()){
+                String name1=s.nextLine();
+                String ic1=s.nextLine();
+                String phone1=s.nextLine();
+                
+                if(tail2==null){
+                    UserNode newnode= new UserNode(name1, ic1, phone1);
+                    tail2=newnode;
+                    head2=newnode;
+                }
+                else{
+                    tail2.next=new UserNode(name1, ic1, phone1);
+                    tail2=tail2.next;
+                }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error 404! File Not Found!");
+        }
+        UserNode current=head2;
+        while(current!=null){
+            if((current.ic).equals(ic)){
+                check=true;
+                break;
+            }
+            current=current.next;
+        }
+        return check;
+    }
+    public boolean checkWaitName2(String ic){
+        boolean check=false;
+        head2=null;
+        tail2=null;
+        try{
+            Scanner s= new Scanner(new FileInputStream("Waiting_List2.txt"));
+            while(s.hasNextLine()){
+                String name1=s.nextLine();
+                String ic1=s.nextLine();
+                String phone1=s.nextLine();
+                
+                if(tail2==null){
+                    UserNode newnode= new UserNode(name1, ic1, phone1);
+                    tail2=newnode;
+                    head2=newnode;
+                }
+                else{
+                    tail2.next=new UserNode(name1, ic1, phone1);
+                    tail2=tail2.next;
+                }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error 404! File Not Found!");
+        }
+        UserNode current=head2;
+        while(current!=null){
+            if((current.ic).equals(ic)){
+                check=true;
+                break;
+            }
+            current=current.next;
+        }
+        return check;
+    }
+    public boolean checkWaitName3(String ic){
+        boolean check=false;
+        head2=null;
+        tail2=null;
+        try{
+            Scanner s= new Scanner(new FileInputStream("Waiting_List3.txt"));
+            while(s.hasNextLine()){
+                String name1=s.nextLine();
+                String ic1=s.nextLine();
+                String phone1=s.nextLine();
+                
+                if(tail2==null){
+                    UserNode newnode= new UserNode(name1, ic1, phone1);
+                    tail2=newnode;
+                    head2=newnode;
+                }
+                else{
+                    tail2.next=new UserNode(name1, ic1, phone1);
+                    tail2=tail2.next;
+                }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error 404! File Not Found!");
+        }
+        UserNode current=head2;
+        while(current!=null){
+            if((current.ic).equals(ic)){
+                check=true;
+                break;
+            }
+            current=current.next;
+        }
+        return check;
+    }
+    public boolean checkWaitName4(String ic){
+        boolean check=false;
+        head2=null;
+        tail2=null;
+        try{
+            Scanner s= new Scanner(new FileInputStream("Waiting_List4.txt"));
+            while(s.hasNextLine()){
+                String name1=s.nextLine();
+                String ic1=s.nextLine();
+                String phone1=s.nextLine();
+                
+                if(tail2==null){
+                    UserNode newnode= new UserNode(name1, ic1, phone1);
+                    tail2=newnode;
+                    head2=newnode;
+                }
+                else{
+                    tail2.next=new UserNode(name1, ic1, phone1);
+                    tail2=tail2.next;
+                }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error 404! File Not Found!");
+        }
+        UserNode current=head2;
+        while(current!=null){
+            if((current.ic).equals(ic)){
+                check=true;
+                break;
+            }
+            current=current.next;
+        }
+        return check;
+    }
+    public boolean checkWaitName5(String ic){
+        boolean check=false;
+        head2=null;
+        tail2=null;
+        try{
+            Scanner s= new Scanner(new FileInputStream("Waiting_List5.txt"));
+            while(s.hasNextLine()){
+                String name1=s.nextLine();
+                String ic1=s.nextLine();
+                String phone1=s.nextLine();
+                
+                if(tail2==null){
+                    UserNode newnode= new UserNode(name1, ic1, phone1);
+                    tail2=newnode;
+                    head2=newnode;
+                }
+                else{
+                    tail2.next=new UserNode(name1, ic1, phone1);
+                    tail2=tail2.next;
+                }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error 404! File Not Found!");
+        }
+        UserNode current=head2;
+        while(current!=null){
+            if((current.ic).equals(ic)){
+                check=true;
+                break;
+            }
+            current=current.next;
+        }
+        return check;
+    }
+    public boolean checkWaitName6(String ic){
+        boolean check=false;
+        head2=null;
+        tail2=null;
+        try{
+            Scanner s= new Scanner(new FileInputStream("Waiting_List6.txt"));
+            while(s.hasNextLine()){
+                String name1=s.nextLine();
+                String ic1=s.nextLine();
+                String phone1=s.nextLine();
+                
+                if(tail2==null){
+                    UserNode newnode= new UserNode(name1, ic1, phone1);
+                    tail2=newnode;
+                    head2=newnode;
+                }
+                else{
+                    tail2.next=new UserNode(name1, ic1, phone1);
+                    tail2=tail2.next;
+                }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error 404! File Not Found!");
+        }
+        UserNode current=head2;
+        while(current!=null){
+            if((current.ic).equals(ic)){
+                check=true;
+                break;
+            }
+            current=current.next;
+        }
+        return check;
+    }
+    public boolean checkWaitName7(String ic){
+        boolean check=false;
+        head2=null;
+        tail2=null;
+        try{
+            Scanner s= new Scanner(new FileInputStream("Waiting_List7.txt"));
+            while(s.hasNextLine()){
+                String name1=s.nextLine();
+                String ic1=s.nextLine();
+                String phone1=s.nextLine();
+                
+                if(tail2==null){
+                    UserNode newnode= new UserNode(name1, ic1, phone1);
+                    tail2=newnode;
+                    head2=newnode;
+                }
+                else{
+                    tail2.next=new UserNode(name1, ic1, phone1);
+                    tail2=tail2.next;
+                }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error 404! File Not Found!");
+        }
+        UserNode current=head2;
+        while(current!=null){
+            if((current.ic).equals(ic)){
+                check=true;
+                break;
+            }
+            current=current.next;
         }
         return check;
     }

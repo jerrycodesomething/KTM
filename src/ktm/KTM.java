@@ -9,13 +9,12 @@ public class KTM{
 
     public static void main(String[] args) throws IOException {
         startMenu();
-        
     }
     
     public static void startMenu() throws IOException{
-        System.out.println("---------- Welcome to KTM (Kereta api Tunggu Menunggu)  -----------");
+        System.out.println("\n---------- Welcome to KTM (Kereta api Tunggu Menunggu)  -----------");
         Scanner s=new Scanner(System.in);
-        System.out.println("1- Login \n2- Book Ticket \n0- exit");
+        System.out.println("1- Login \n2- Book Ticket \n3- check ticket status \n0- exit");
         
         ui_state=s.next();
         if(ui_state.equals("0")){
@@ -30,6 +29,11 @@ public class KTM{
             System.out.println("-----------------------------------------------------------");
             System.out.println("[Booking]");
             Booking.bookMain();
+        }
+        else if(ui_state.equals("3")){
+            System.out.println("------------------------------------------------------------");
+            System.out.println("[Check Status]");
+            Status.statusMain();
         }
         else{
             System.out.println("\nPlease select options 0 or 1 only!");
