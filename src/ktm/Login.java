@@ -178,36 +178,57 @@ public class Login {
                     train.initializeSeats_Jan1();
                     train.clearSeat(ticketid);
                     train.updateTrain1File();
+                    if(train.checkFull()==true){
+                        train.dequeue1();
+                    }
                     break;
                 case 2:
                     train.initializeSeats_Jan2();
                     train.clearSeat(ticketid);
                     train.updateTrain2File();
+                    if(train.checkFull()==true){
+                        train.dequeue2();
+                    }
                     break;
                 case 3:    
                     train.initializeSeats_Jan3();
                     train.clearSeat(ticketid);
                     train.updateTrain3File();
+                    if(train.checkFull()==true){
+                        train.dequeue3();
+                    }
                     break;
                 case 4:    
                     train.initializeSeats_Jan4();
                     train.clearSeat(ticketid);
                     train.updateTrain4File();
+                    if(train.checkFull()==true){
+                        train.dequeue4();
+                    }
                     break;
                 case 5:
                     train.initializeSeats_Jan5();
                     train.clearSeat(ticketid);
                     train.updateTrain5File();
+                    if(train.checkFull()==true){
+                        train.dequeue5();
+                    }
                     break;
                 case 6:
                     train.initializeSeats_Jan6();
                     train.clearSeat(ticketid);
                     train.updateTrain6File();
+                    if(train.checkFull()==true){
+                        train.dequeue6();
+                    }
                     break;
                 case 7:    
                     train.initializeSeats_Jan7();
                     train.clearSeat(ticketid);
                     train.updateTrain7File();
+                    if(train.checkFull()==true){
+                        train.dequeue7();
+                    }
                     break;
                 default:
                      System.out.println("Nothing was deleted...");
