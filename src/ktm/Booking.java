@@ -108,10 +108,15 @@ public class Booking {
                         String phone=s.nextLine();
                         
                         train.enqueue1(name, ic, phone);
-                        train.showList2();
+                        System.out.println("You have been added to the waiting list...");
+                        KTM.startMenu();
+                        
                     }
                     else if(waitlistconfirm.equalsIgnoreCase("n")){
-                        
+                        bookMain();
+                    }
+                    else{
+                        bookMain();
                     }
                 }
                 break;
@@ -152,7 +157,7 @@ public class Booking {
                         if(confirmation.equalsIgnoreCase("y")){
                             try{
                                 train.bookSeat(name, ic, phone, ticketid, seat, status);
-                                train.updateTrain1File();
+                                train.updateTrain2File();
                             }
                             catch(IOException e){
                                 System.out.println("Error 404! File Not Found!");
@@ -195,10 +200,15 @@ public class Booking {
                         String phone=s.nextLine();
                         
                         train.enqueue2(name, ic, phone);
-                        train.showList2();
+                        System.out.println("You have been added to the waiting list...");
+                        KTM.startMenu();
+                        //train.showList2();
                     }
                     else if(waitlistconfirm.equalsIgnoreCase("n")){
-                        
+                        bookMain();
+                    }
+                    else{
+                        bookMain();
                     }
                 }
                 break;
@@ -239,7 +249,7 @@ public class Booking {
                         if(confirmation.equalsIgnoreCase("y")){
                             try{
                                 train.bookSeat(name, ic, phone, ticketid, seat, status);
-                                train.updateTrain1File();
+                                train.updateTrain3File();
                             }
                             catch(IOException e){
                                 System.out.println("Error 404! File Not Found!");
@@ -247,7 +257,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Thursday 2 January 2019");
+                            System.out.println("Travel Date               Friday 3 January 2019");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -282,10 +292,15 @@ public class Booking {
                         String phone=s.nextLine();
                         
                         train.enqueue3(name, ic, phone);
-                        train.showList2();
+                        System.out.println("You have been added to the waiting list...");
+                        KTM.startMenu();
+                        //train.showList2();
                     }
                     else if(waitlistconfirm.equalsIgnoreCase("n")){
-                        
+                        bookMain();
+                    }
+                    else{
+                        bookMain();
                     }
                 }
                 break;
@@ -326,7 +341,7 @@ public class Booking {
                         if(confirmation.equalsIgnoreCase("y")){
                             try{
                                 train.bookSeat(name, ic, phone, ticketid, seat, status);
-                                train.updateTrain1File();
+                                train.updateTrain4File();
                             }
                             catch(IOException e){
                                 System.out.println("Error 404! File Not Found!");
@@ -334,7 +349,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Thursday 2 January 2019");
+                            System.out.println("Travel Date               Saturday 4 January 2019");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -369,10 +384,15 @@ public class Booking {
                         String phone=s.nextLine();
                         
                         train.enqueue4(name, ic, phone);
-                        train.showList2();
+                        System.out.println("You have been added to the waiting list...");
+                        KTM.startMenu();
+                        //train.showList2();
                     }
                     else if(waitlistconfirm.equalsIgnoreCase("n")){
-                        
+                        bookMain();
+                    }
+                    else{
+                        bookMain();
                     }
                 }
                 break;
@@ -412,7 +432,7 @@ public class Booking {
                         if(confirmation.equalsIgnoreCase("y")){
                             try{
                                 train.bookSeat(name, ic, phone, ticketid, seat, status);
-                                train.updateTrain1File();
+                                train.updateTrain5File();
                             }
                             catch(IOException e){
                                 System.out.println("Error 404! File Not Found!");
@@ -420,7 +440,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Thursday 2 January 2019");
+                            System.out.println("Travel Date               Sunday 5 January 2019");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -455,10 +475,15 @@ public class Booking {
                         String phone=s.nextLine();
                         
                         train.enqueue5(name, ic, phone);
-                        train.showList2();
+                        System.out.println("You have been added to the waiting list...");
+                        KTM.startMenu();
+                        //train.showList2();
                     }
                     else if(waitlistconfirm.equalsIgnoreCase("n")){
-                        
+                        bookMain();
+                    }
+                    else{
+                        bookMain();
                     }
                 }
                 break;
@@ -498,7 +523,7 @@ public class Booking {
                         if(confirmation.equalsIgnoreCase("y")){
                             try{
                                 train.bookSeat(name, ic, phone, ticketid, seat, status);
-                                train.updateTrain1File();
+                                train.updateTrain6File();
                             }
                             catch(IOException e){
                                 System.out.println("Error 404! File Not Found!");
@@ -506,7 +531,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Thursday 2 January 2019");
+                            System.out.println("Travel Date               Monday 6 January 2019");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -541,10 +566,15 @@ public class Booking {
                         String phone=s.nextLine();
                         
                         train.enqueue6(name, ic, phone);
-                        train.showList2();
+                        System.out.println("You have been added to the waiting list...");
+                        KTM.startMenu();
+                        //train.showList2();
                     }
                     else if(waitlistconfirm.equalsIgnoreCase("n")){
-                        
+                        bookMain();
+                    }
+                    else{
+                        bookMain();
                     }
                 }
                 break;
@@ -584,7 +614,7 @@ public class Booking {
                         if(confirmation.equalsIgnoreCase("y")){
                             try{
                                 train.bookSeat(name, ic, phone, ticketid, seat, status);
-                                train.updateTrain1File();
+                                train.updateTrain7File();
                             }
                             catch(IOException e){
                                 System.out.println("Error 404! File Not Found!");
@@ -592,7 +622,7 @@ public class Booking {
 
                             System.out.println("\nBooking Successful!");
                             System.out.println("-------------  Ticket Details -------------------");
-                            System.out.println("Travel Date               Thursday 2 January 2019");
+                            System.out.println("Travel Date               Tuesday 6 January 2019");
                             System.out.println("Departing from                Kuala Lumpur(12:00)");
                             System.out.println("Arriving at                   Johor Bahru (20:00)");
                             System.out.println("\nPassenger Name: "+name);
@@ -627,10 +657,15 @@ public class Booking {
                         String phone=s.nextLine();
                         
                         train.enqueue7(name, ic, phone);
-                        train.showList2();
+                        System.out.println("You have been added to the waiting list...");
+                        KTM.startMenu();
+                        //train.showList2();
                     }
                     else if(waitlistconfirm.equalsIgnoreCase("n")){
-                        
+                        bookMain();
+                    }
+                    else{
+                        bookMain();
                     }
                 }
                 break;  

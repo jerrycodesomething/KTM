@@ -49,10 +49,6 @@ public class Login {
                         break;
                     case "3":
                         deleteTicket(ticketid);
-                        Train train=new Train();
-                        if(train.checkWaiting1()==false){
-                            train.dequeue1();
-                        }
                         KTM.startMenu();
                         break;
                     default:    
@@ -71,7 +67,7 @@ public class Login {
             System.out.println("Departing from                Kuala Lumpur(12:00)");
             System.out.println("Arriving at                   Johor Bahru (20:00)");
             train.retrieveBooking(ic, ticketid);
-            System.out.println("--------------------------------------------------\n\n"); 
+            System.out.println("--------------------------------------------------"); 
         } 
         train.initializeSeats_Jan2();
         if((train.checkBooking(ic, ticketid))==true){
@@ -163,76 +159,103 @@ public class Login {
         }
     }
     
-    public static void deleteTicket(String ticketid) throws IOException{
+    public static void deleteTicket(String ticketid) throws IOException1{
         Scanner s=new Scanner (System.in);
         String check="x";
         Train train=new Train();
-        int breakcheck=train.checkTrainToDelete(ic, ticketid);
         
         System.out.println("Are you sure you want to cancel your booked ticket? Y/N");
         check=s.nextLine();
+        
         if(check.equalsIgnoreCase("y")){
-            switch(breakcheck){
-                case 1:
-                    train= new Train();
-                    train.initializeSeats_Jan1();
-                    train.clearSeat(ticketid);
-                    train.updateTrain1File();
-                    if(train.checkFull()==true){
+            int breakcheck=train.checkTrainToDelete(ic, ticketid);
+            boolean checkfull=false;
+            
+            if(breakcheck==1){
+                train= new Train();
+                train.initializeSeats_Jan1();
+                checkfull=train.checkFull();
+                train.clearSeat(ticketid);
+                train.updateTrain1File();
+                if(checkfull==true){
+                    if(train.checkWaiting1()==false){
                         train.dequeue1();
-                    }
-                    break;
-                case 2:
-                    train.initializeSeats_Jan2();
-                    train.clearSeat(ticketid);
-                    train.updateTrain2File();
-                    if(train.checkFull()==true){
-                        train.dequeue2();
-                    }
-                    break;
-                case 3:    
-                    train.initializeSeats_Jan3();
-                    train.clearSeat(ticketid);
-                    train.updateTrain3File();
-                    if(train.checkFull()==true){
-                        train.dequeue3();
-                    }
-                    break;
-                case 4:    
-                    train.initializeSeats_Jan4();
-                    train.clearSeat(ticketid);
-                    train.updateTrain4File();
-                    if(train.checkFull()==true){
-                        train.dequeue4();
-                    }
-                    break;
-                case 5:
-                    train.initializeSeats_Jan5();
-                    train.clearSeat(ticketid);
-                    train.updateTrain5File();
-                    if(train.checkFull()==true){
-                        train.dequeue5();
-                    }
-                    break;
-                case 6:
-                    train.initializeSeats_Jan6();
-                    train.clearSeat(ticketid);
-                    train.updateTrain6File();
-                    if(train.checkFull()==true){
-                        train.dequeue6();
-                    }
-                    break;
-                case 7:    
-                    train.initializeSeats_Jan7();
-                    train.clearSeat(ticketid);
-                    train.updateTrain7File();
-                    if(train.checkFull()==true){
-                        train.dequeue7();
-                    }
-                    break;
-                default:
-                     System.out.println("Nothing was deleted...");
+                    }    
+                }
             }
+            if(breakcheck==2){
+                train= new Train();
+                train.initializeSeats_Jan2();
+                checkfull=train.checkFull();
+                train.clearSeat(ticketid);
+                train.updateTrain2File();
+                if(checkfull==true){
+                    if(train.checkWaiting2()==false){
+                        train.dequeue2();
+                    }  
+                }
+            }
+            if(breakcheck==3){
+                train= new Train();
+                train.initializeSeats_Jan3();
+                checkfull=train.checkFull();
+                train.clearSeat(ticketid);
+                train.updateTrain3File();
+                if(checkfull==true){
+                    if(train.checkWaiting3()==false){
+                        train.dequeue3();
+                    }  
+                }
+            }
+            if(breakcheck==4){
+                train= new Train();
+                train.initializeSeats_Jan4();
+                checkfull=train.checkFull();
+                train.clearSeat(ticketid);
+                train.updateTrain4File();
+                if(checkfull==true){
+                    if(train.checkWaiting4()==false){
+                        train.dequeue4();
+                    }  
+                }
+            }
+            if(breakcheck==5){
+                train= new Train();
+                train.initializeSeats_Jan4();
+                checkfull=train.checkFull();
+                train.clearSeat(ticketid);
+                train.updateTrain4File();
+                if(checkfull==true){
+                    if(train.checkWaiting5()==false){
+                        train.dequeue5();
+                    }  
+                }
+            }
+            if(breakcheck==6){
+                train= new Train();
+                train.initializeSeats_Jan6();
+                checkfull=train.checkFull();
+                train.clearSeat(ticketid);
+                train.updateTrain6File();
+                if(checkfull==true){
+                    if(train.checkWaiting6()==false){
+                        train.dequeue6();
+                    }  
+                }
+            }
+            if(breakcheck==7){
+                train= new Train();
+                train.initializeSeats_Jan7();
+                checkfull=train.checkFull();
+                train.clearSeat(ticketid);
+                train.updateTrain7File();
+                if(checkfull==true){
+                    if(train.checkWaiting7()==false){
+                        train.dequeue7();
+                    }  
+                }
+            }
+            
             System.out.println("BOOKING HAS BEEN CANCELLED.");
             System.out.println("---------------------------------------------------------------");
         }
