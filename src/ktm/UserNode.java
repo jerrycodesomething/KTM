@@ -21,6 +21,12 @@ public class UserNode {
         this.next=null;
     }
     
+    public UserNode(String name, String ic, String phone){
+        this.name=name;
+        this.ic=ic;
+        this.phone=phone;
+    }
+    
     public UserNode(String name, String ic, String phone, String ticketid, int seat, boolean status){
         this.name=name;
         this.ic=ic;

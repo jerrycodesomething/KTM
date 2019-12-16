@@ -32,7 +32,7 @@ public class Login {
             while(!ui_state.equals("1") || !ui_state.equals("2") || !ui_state.equals("3")){
                 System.out.println("\nWhat would you like to do? ");
                 System.out.println("Please select options 1-3...");
-                System.out.println("\n1- view ticket/s \n2- edit details \n3- cancel booking");
+                System.out.println("\n1- view ticket/s \n2- edit details \n3- cancel booking \n0- back");
                 ui_state=s.nextLine();
 
                 switch (ui_state){
@@ -49,6 +49,10 @@ public class Login {
                         break;
                     case "3":
                         deleteTicket(ticketid);
+                        Train train=new Train();
+                        if(train.checkWaiting1()==false){
+                            train.dequeue1();
+                        }
                         KTM.startMenu();
                         break;
                     default:    
