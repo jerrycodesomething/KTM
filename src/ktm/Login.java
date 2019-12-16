@@ -166,31 +166,52 @@ public class Login {
     public static void deleteTicket(String ticketid) throws IOException{
         Scanner s=new Scanner (System.in);
         String check="x";
+        Train train=new Train();
+        int breakcheck=train.checkTrainToDelete(ic, ticketid);
+        
         System.out.println("Are you sure you want to cancel your booked ticket? Y/N");
         check=s.nextLine();
         if(check.equalsIgnoreCase("y")){
-            Train train= new Train();
-            train.initializeSeats_Jan1();
-            train.clearSeat(ticketid);
-            train.updateTrain1File();
-            train.initializeSeats_Jan2();
-            train.clearSeat(ticketid);
-            train.updateTrain2File();
-            train.initializeSeats_Jan3();
-            train.clearSeat(ticketid);
-            train.updateTrain3File();
-            train.initializeSeats_Jan4();
-            train.clearSeat(ticketid);
-            train.updateTrain4File();
-            train.initializeSeats_Jan5();
-            train.clearSeat(ticketid);
-            train.updateTrain5File();
-            train.initializeSeats_Jan6();
-            train.clearSeat(ticketid);
-            train.updateTrain6File();
-            train.initializeSeats_Jan7();
-            train.clearSeat(ticketid);
-            train.updateTrain7File();
+            switch(breakcheck){
+                case 1:
+                    train= new Train();
+                    train.initializeSeats_Jan1();
+                    train.clearSeat(ticketid);
+                    train.updateTrain1File();
+                    break;
+                case 2:
+                    train.initializeSeats_Jan2();
+                    train.clearSeat(ticketid);
+                    train.updateTrain2File();
+                    break;
+                case 3:    
+                    train.initializeSeats_Jan3();
+                    train.clearSeat(ticketid);
+                    train.updateTrain3File();
+                    break;
+                case 4:    
+                    train.initializeSeats_Jan4();
+                    train.clearSeat(ticketid);
+                    train.updateTrain4File();
+                    break;
+                case 5:
+                    train.initializeSeats_Jan5();
+                    train.clearSeat(ticketid);
+                    train.updateTrain5File();
+                    break;
+                case 6:
+                    train.initializeSeats_Jan6();
+                    train.clearSeat(ticketid);
+                    train.updateTrain6File();
+                    break;
+                case 7:    
+                    train.initializeSeats_Jan7();
+                    train.clearSeat(ticketid);
+                    train.updateTrain7File();
+                    break;
+                default:
+                     System.out.println("Nothing was deleted...");
+            }
             System.out.println("BOOKING HAS BEEN CANCELLED.");
             System.out.println("---------------------------------------------------------------");
         }
