@@ -11,7 +11,7 @@ public class Booking {
     static String ui_state; 
     
     //Booking Methods
-    public static void bookMain(){
+    public static void bookMain() throws IOException{
         System.out.println("------------- Available Travel Dates (2020)--------------");
         System.out.println("------------- Kuala Lumpur to Johor Bahru ----------------");
         System.out.println("\nPlease select options 1-7...");
@@ -19,7 +19,7 @@ public class Booking {
         bookingMenu();
     }
     
-    public static void bookingMenu(){
+    public static void bookingMenu() throws IOException{
         Scanner s= new Scanner(System.in);
         ui_state=s.nextLine();
         
@@ -47,6 +47,11 @@ public class Booking {
                     name=s.nextLine();
                     System.out.println("Enter IC Number:");
                     ic=s.nextLine();
+                    if(train.checkSameDay(ic)==true){
+                        System.out.println("YOU ALREADY HAVE A TICKET FOR THIS TRAIN!");
+                        bookMain();
+                        break;
+                    }
                     System.out.println("Enter Phone Number");  
                     phone=s.nextLine();
                     
