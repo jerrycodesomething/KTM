@@ -10,7 +10,8 @@ public class KTM{
         System.out.println("---------- Welcome to KTM (Kereta api Tunggu Menunggu)  -----------");
         startMenu();
         
-            
+
+        
     }
     
     public static void startMenu(){

@@ -1,13 +1,16 @@
 
 package ktm;
 
+import java.util.Random;
 import java.util.Scanner;
 
 
 public class Booking {
     //Booking Class Variables
     static String ui_state; 
-    //Booking Constructor
+    static int idcounter=0;
+    
+//Booking Constructor
     
     //Booking Methods
     public static void bookMain(){
@@ -24,7 +27,23 @@ public class Booking {
         
         switch(ui_state){
             case "1":
-                System.out.println("1");
+                User user= new User();
+                user.initializeSeats_Jan1();
+                String name;
+                String ic;
+                String phone;
+                String ticketid=ticketidGenerator();
+                boolean status=true;
+                
+                System.out.println("Enter Full Name:");
+                name=s.nextLine();
+                System.out.println("Enter IC Number:");
+                ic=s.nextLine();
+                System.out.println("Enter Phone Number");  
+                phone=s.nextLine();
+                
+                user.bookSeat(name, ic, phone, ticketid, status);
+                user.showList();
                 break;
             case "2":
                 System.out.println("2");
@@ -50,20 +69,12 @@ public class Booking {
         }
     }
     
-    public static void enterDetails(){
-        Scanner s= new Scanner(System.in);
-        String name;
-        String ic;
-        String phone;
-        System.out.println("Enter Full Name:");
-        name=s.nextLine();
-        System.out.println("Enter IC Number:");
-        ic=s.nextLine();
-        System.out.println("Enter Phone Number");  
-        phone=s.nextLine();
-        
-        User user= new User();
-
+    
+    public static String ticketidGenerator(){
+        Random r=new Random();
+        int randomid=r.nextInt(1000);
+        idcounter++;
+        return String.valueOf(randomid)+String.valueOf(idcounter);        
     }
     
     
