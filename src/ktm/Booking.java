@@ -1,6 +1,10 @@
 
 package ktm;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,7 +21,7 @@ public class Booking {
         System.out.println("------------- Available Travel Dates (2020)--------------");
         System.out.println("------------- Kuala Lumpur to Johor Bahru ----------------");
         System.out.println("\nPlease select options 1-7...");
-        System.out.println("\n1- Wednesday Jan 1 \n2- Thursday Jan 2 \n3- Friday Jan 3 \n4- Saturday Jan 4 \n5- Sunday Jan 5 \n6- Monday Jan 6 \n7- Tuesday Jan 7");
+        System.out.println("\n1- Wednesday Jan 1 (dep 12:00 arr 20:00) \n2- Thursday Jan 2 (dep 12:00 arr 20:00) \n3- Friday Jan 3 (dep 12:00 arr 20:00) \n4- Saturday Jan 4 (dep 12:00 arr 20:00) \n5- Sunday Jan 5 (dep 12:00 arr 20:00) \n6- Monday Jan 6 (dep 12:00 arr 20:00) \n7- Tuesday Jan 7 (dep 12:00 arr 20:00) \n0- back");
         bookingMenu();
     }
     
@@ -26,8 +30,15 @@ public class Booking {
         ui_state=s.nextLine();
         
         switch(ui_state){
+            case "0":
+                KTM.startMenu();
+                KTM.clearConsole();
+                break;
             case "1":
-                User user= new User();
+                System.out.println("-------  Kuala Lumpur to Johor Bahru ------------");
+                System.out.println("------ January 1 (dep 12:00 arr 20:00)-----------");
+                Train1 user= new Train1();
+                String confirmation="n";
                 user.initializeSeats_Jan1();
                 String name;
                 String ic;
@@ -41,8 +52,34 @@ public class Booking {
                 ic=s.nextLine();
                 System.out.println("Enter Phone Number");  
                 phone=s.nextLine();
+                System.out.println("Confirm Booking? Y/N");
+                confirmation=s.nextLine();
                 
-                user.bookSeat(name, ic, phone, ticketid, status);
+                if(confirmation.equalsIgnoreCase("y")){
+//                    try{
+//                        user.bookSeat(name, ic, phone, ticketid, status);
+//                        user.updateTrainFile();
+//                    }
+//                    catch(IOException e){
+//                        System.out.println("Error 404! File Not Found!");
+//                    }
+                    
+                    System.out.println("Booking Successful!");
+                    System.out.println("-------------  Ticket Details -------------------");
+                    System.out.println("Departing from                Kuala Lumpur(12:00)");
+                    System.out.println("Arriving at                   Johor Bahru (20:00)");
+                    System.out.println("Passenger Name: "+name);
+                    System.out.println("Passenger IC Number: "+ic);
+                    System.out.println("Ticket ID: "+ticketid);
+                }
+                else if(confirmation.equalsIgnoreCase("n")){
+                    System.out.println("Booking Cancelled... Please select a travel date!");
+                    bookMain();
+                }
+                else{
+                    System.out.println("Please sellect Y or N only!");
+                }
+                
                 user.showList();
                 break;
             case "2":
