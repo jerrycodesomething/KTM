@@ -159,7 +159,7 @@ public class Login {
         }
     }
     
-    public static void deleteTicket(String ticketid) throws IOException1{
+    public static void deleteTicket(String ticketid) throws IOException{
         Scanner s=new Scanner (System.in);
         String check="x";
         Train train=new Train();
