@@ -6,11 +6,13 @@ import java.util.Scanner;
 
 public class KTM{
     static String ui_state;
-
+    
+    //running method
     public static void main(String[] args) throws IOException {
         startMenu();
     }
     
+    //runs the opening menu
     public static void startMenu() throws IOException{
         System.out.println("\n---------- Welcome to KTM (Kereta api Tunggu Menunggu)  -----------");
         Scanner s=new Scanner(System.in);
@@ -41,15 +43,7 @@ public class KTM{
         }
     }
     
-    public static void clearConsole(){
-        try{
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
-        System.out.flush();
-    }
+
     
     
     

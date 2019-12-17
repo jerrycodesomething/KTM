@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Status {
     static String ic;
     
+    //main prompt to prompt ticket status menu
     public static void statusMain() throws IOException{
         Scanner s= new Scanner(System.in);
         System.out.println("Please enter your IC NUMBER...");
@@ -19,6 +20,7 @@ public class Status {
         KTM.startMenu();
     }
     
+    //method to check status of ticket with brief details
     public static void viewTicket(String ic){
         Train train= new Train();
         train.initializeSeats_Jan1();

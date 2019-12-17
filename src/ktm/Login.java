@@ -10,6 +10,7 @@ public class Login {
     static String ic;
     static String ticketid;
     
+    //opens the main login prompt
     public static void loginMain() throws IOException {
         Scanner s= new Scanner(System.in);
         System.out.println("press 'Enter' to continue login process     or      enter 'X' to exit");
@@ -26,6 +27,7 @@ public class Login {
         loginMenu();
     }
     
+    //subsequent login prompt
     public static void loginMenu() throws IOException{
         Scanner s=new Scanner(System.in);
         if(account_existence==true){
@@ -58,6 +60,7 @@ public class Login {
         }
     }
     
+    //method to view the details for a particular ticket across 7 trains
     public static void viewTicket(String ic, String ticketid){
         Train train= new Train();
         train.initializeSeats_Jan1();
@@ -125,6 +128,7 @@ public class Login {
         }    
     }
     
+    //edit passenger particulars for certain ticket
     public static void editTicket(String ticketid) throws IOException{
         Scanner s= new Scanner(System.in);
         String check="x";
@@ -159,6 +163,7 @@ public class Login {
         }
     }
     
+    //deletes ticket
     public static void deleteTicket(String ticketid) throws IOException{
         Scanner s=new Scanner (System.in);
         String check="x";
@@ -268,6 +273,7 @@ public class Login {
         }
     }
     
+    //check if booked ticket exists 
     public static void checkAccount(String ic, String ticketid) throws IOException{
         Train train= new Train();
         account_existence=false;

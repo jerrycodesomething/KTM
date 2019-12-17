@@ -19,6 +19,7 @@ public class Booking {
         bookingMenu();
     }
     
+    //open subsequent booking prompt
     public static void bookingMenu() throws IOException{
         Scanner s= new Scanner(System.in);
         ui_state=s.nextLine();
@@ -26,7 +27,6 @@ public class Booking {
         switch(ui_state){
             case "0":
                 KTM.startMenu();
-                KTM.clearConsole();
                 break;
                 
             case "1":
@@ -677,6 +677,7 @@ public class Booking {
         }
     }
     
+    //generate ticketID
     public static String ticketidGenerator(){
         Random r=new Random();
         int randomid=r.nextInt(1000000000);

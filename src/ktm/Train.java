@@ -13,14 +13,13 @@ import java.util.Scanner;
 
 
 public class Train {
-    //User Class Variables
     UserNode head;
     UserNode head2;
     UserNode tail2;
     UserNode tail;
     int size;
     
-    //User Methods
+    ////////////////////////////////////////////////////////////////Method to Load linked list from file //////////////////////////////////////////////
     public void initializeSeats_Jan1(){
         head=null;
         tail=null;
@@ -169,6 +168,7 @@ public class Train {
         }
     }
     
+    /////////////////////////////////////////////////////////////////// Method to update file from linked list /////////////////////////////////////////
     public void updateTrain1File() throws IOException{
         PrintWriter pw=new PrintWriter(new FileWriter(new File("Train_Jan1.txt")));   
         UserNode current=head;
@@ -268,6 +268,7 @@ public class Train {
         pw.close();
     }
     
+    //////////////////////////////////////////////////////////////////////// Method to add to waiting list /////////////////////////////////////////////
     public void enqueue1(String name,String ic,String phone) throws IOException{
         try{
             Scanner s= new Scanner(new FileInputStream("Waiting_List1.txt"));
@@ -577,7 +578,7 @@ public class Train {
         pw.close();
     }
     
-    
+    //////////////////////////////////////////////////////////////////////// Method to remove from waiting list and add to confirmed booking////////////////
     public void dequeue1() throws IOException{
         head2=null;
         tail2=null;
@@ -887,6 +888,7 @@ public class Train {
         }
     }
 
+    //////////////////////////////////////////////////////////////////////// Method to add last for linked list only ////////////////////////////
     public void addLast(String name, String ic, String phone, String ticketid, int seat, boolean status){
         if(tail==null){
             UserNode newnode= new UserNode(name, ic, phone, ticketid, seat, status);
@@ -900,6 +902,7 @@ public class Train {
         size++;
     }
     
+    ///////////////////////////////////////////////////////////////////////Method to book and reserve seat ///////////////////////////////////////
     public void bookSeat(String name, String ic, String phone, String ticketid, int seat, boolean status){
         UserNode current= head;
         while(current!=null){
@@ -915,6 +918,7 @@ public class Train {
         }
     }
     
+    /////////////////////////////////////////////////////////////////////// Method to free up seat //////////////////////////////////////////////
     public void clearSeat(String ticketid){
         UserNode current=head;
         while(current!=null){
@@ -930,6 +934,7 @@ public class Train {
         }  
     }
     
+    ///////////////////////////////////////////////////////////////////////// Method to edit user in linked list ///////////////////////////////////////// 
     public void editUser(String ticketid, String new_name, String new_ic, String new_phone){
         UserNode current=head;
         while(current!=null){
@@ -942,7 +947,8 @@ public class Train {
         current=current.next;    
         }  
     }
-
+    
+    /////////////////////////////////////////////////////////////////////Method to retrieve Booking details /////////////////////////////////////////
     public void retrieveBooking(String ic, String ticketid){
         UserNode current= head;
         while(current!=null){
@@ -957,6 +963,7 @@ public class Train {
         }
     }
     
+    ////////////////////////////////////////////////////////////////////Method to confirm booking status //////////////////////////////////////
     public void retrieveStatus(String ic){
         UserNode current= head;
         while(current!=null){
@@ -968,6 +975,7 @@ public class Train {
         }
     }
     
+    ///////////////////////////////////////////////////////////////// Method to check if booking exists //////////////////////////////////////
     public boolean checkBooking(String ic, String ticketid){
         UserNode current= head;
         boolean check=false;
@@ -981,6 +989,7 @@ public class Train {
         return check;
     }
     
+    ///////////////////////////////////////////////////////////////////Method to check matching ticket //////////////////////////////////////
     public boolean checkTicket(String ic){
         UserNode current= head;
         boolean check=false;
@@ -994,6 +1003,7 @@ public class Train {
         return check;
     }
     
+    /////////////////////////////////////////////////////////////////Method to check if user has booking on the same day ///////////////////////
     public boolean checkSameDay(String ic){
         UserNode current=head;
         boolean check=false;
@@ -1007,6 +1017,7 @@ public class Train {
         return check;
     }
     
+    //////////////////////////////////////////////////////////////// Method to check if train is full ///////////////////////////////////////
     public boolean checkFull(){
         boolean checkfull=false;
         int counter=0;
@@ -1023,6 +1034,7 @@ public class Train {
         return checkfull;
     }
     
+    ////////////////////////////////////////////////////////////////////Method to check whether deletion conditions are met //////////////////////////////////////
     public int checkTrainToDelete(String ic, String ticketid){
         int breakcheck=0;
     
@@ -1093,6 +1105,7 @@ public class Train {
         return breakcheck;
     }
     
+    //////////////////////////////////////////////////////////////////Method to check if waiting list is empty ///////////////////
     public boolean checkWaiting1() throws IOException{
         boolean check=false;
         File file=new File("Waiting_list1.txt");
@@ -1150,6 +1163,7 @@ public class Train {
         return check;
     }
     
+     ////////////////////////////////////////////////////////////////////Method check if name is in waiting list //////////////////////////////////////
     public boolean checkWaitName1(String ic){
         boolean check=false;
         head2=null;
@@ -1396,6 +1410,7 @@ public class Train {
         return check;
     }
     
+    //////////////////////////////////////////////////////////////////////Method to check if there are available seats////////////////////////////
     public int checkAvailability(){
         int booking_availability=20;
         UserNode current= head;
@@ -1408,6 +1423,7 @@ public class Train {
         return booking_availability;
     }
     
+    ///////////////////////////////////////////////////////////////////Method to return null seat //////////////////////////////////////
     public int returnSeat(){
         UserNode current=head;
         int seat_no=0;
@@ -1421,6 +1437,7 @@ public class Train {
         return seat_no;
     }
     
+    ////////////////////////////////////////////////////////////////////Method to return name based on ic //////////////////////////////////////
     public String getName(String ic){
         UserNode current= head;
         String name=null;
@@ -1432,7 +1449,8 @@ public class Train {
         }
         return name;  
     }
-   
+    
+    ////////////////////////////////////////////////////////////////////Method to show Linked list1 //////////////////////////////////////
     public void showList(){
         UserNode current= head;
         while(current!=null){
@@ -1447,6 +1465,7 @@ public class Train {
         
     }
     
+     ////////////////////////////////////////////////////////////////////Method to show linked list21 //////////////////////////////////////
     public void showList2(){
         UserNode current= head2;
         while(current!=null){
