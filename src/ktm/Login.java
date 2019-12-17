@@ -147,9 +147,41 @@ public class Login {
         
         if(check.equalsIgnoreCase("y")){
             Train train= new Train();
-            train.initializeSeats_Jan1();
-            train.editUser(ticketid, name, ic, phone);
-            train.updateTrain1File();    
+            train.initializeSeats_Jan1();           
+            if(ticketid.equals(train.getTicketID(ticketid))){
+                train.editUser(ticketid, name, ic, phone);
+                train.updateTrain1File();    
+            }
+            train.initializeSeats_Jan2();           
+            if(ticketid.equals(train.getTicketID(ticketid))){
+                train.editUser(ticketid, name, ic, phone);
+                train.updateTrain2File();    
+            }
+            train.initializeSeats_Jan3();           
+            if(ticketid.equals(train.getTicketID(ticketid))){
+                train.editUser(ticketid, name, ic, phone);
+                train.updateTrain3File();    
+            }
+            train.initializeSeats_Jan4();           
+            if(ticketid.equals(train.getTicketID(ticketid))){
+                train.editUser(ticketid, name, ic, phone);
+                train.updateTrain4File();    
+            }
+            train.initializeSeats_Jan5();           
+            if(ticketid.equals(train.getTicketID(ticketid))){
+                train.editUser(ticketid, name, ic, phone);
+                train.updateTrain5File();    
+            }
+            train.initializeSeats_Jan6();           
+            if(ticketid.equals(train.getTicketID(ticketid))){
+                train.editUser(ticketid, name, ic, phone);
+                train.updateTrain6File();    
+            }
+            train.initializeSeats_Jan7();           
+            if(ticketid.equals(train.getTicketID(ticketid))){
+                train.editUser(ticketid, name, ic, phone);
+                train.updateTrain7File();    
+            }
             System.out.println("Updated details successfully saved!");
             System.out.println("---------------------------------------------------------------");
             

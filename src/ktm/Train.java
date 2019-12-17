@@ -1450,6 +1450,18 @@ public class Train {
         return name;  
     }
     
+    public String getTicketID(String ticketid){
+        UserNode current= head;
+        String name=null;
+        while(current!=null){
+            if((current.ticketid).equals(ticketid)){
+                name=current.ticketid;
+            }
+            current=current.next;
+        }
+        return name;  
+    }
+    
     ////////////////////////////////////////////////////////////////////Method to show Linked list1 //////////////////////////////////////
     public void showList(){
         UserNode current= head;
