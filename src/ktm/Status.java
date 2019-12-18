@@ -4,7 +4,9 @@ package ktm;
 import java.io.IOException;
 import java.util.Scanner;
 
+//This class handles the "check ticket status" functions
 public class Status {
+    //Status class variables
     static String ic;
     
     //main prompt to prompt ticket status menu

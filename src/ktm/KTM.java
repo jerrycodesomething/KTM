@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class KTM{
+    //KTM class variables
     static String ui_state;
     
     //running method

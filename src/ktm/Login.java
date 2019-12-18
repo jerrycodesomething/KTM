@@ -4,7 +4,9 @@ package ktm;
 import java.io.IOException;
 import java.util.Scanner;
 
+//This class handles the login operations which allow users to view, edit, and delete their tickets
 public class Login {
+    //Login class variables
     private static boolean account_existence=true;
     static String ui_state="x";
     static String ic;

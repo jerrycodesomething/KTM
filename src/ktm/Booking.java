@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
-
+//This class handles the "ticket booking" functions
 public class Booking {
     //Booking Class Variables
     static String ui_state; 
